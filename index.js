@@ -21,16 +21,16 @@ const PORT = 9000;
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 app.use(express.json());
-app.use(cors({
-  // origin: ['http://localhost:3000', 'http://localhost:5173'],
-  origin: ['https://nexcent-chi-seven.vercel.app/', 'https://nexcent-dashboard.vercel.app/'],
-  credentials: true
-}));
-
 // app.use(cors({
-//   origin: ['http://localhost:3000', 'http:localhost:5173'],
+//   origin: ['http://localhost:3000', 'http://localhost:5173'],
+//   // origin: ['https://nexcent-chi-seven.vercel.app/', 'https://nexcent-dashboard.vercel.app/'],
 //   credentials: true
 // }));
+
+app.use(cors({
+  origin: ['https://nexcent-dashboard.vercel.app', 'https://nexcent-chi-seven.vercel.app'],
+  credentials: true
+}));
 
 // app.use(cors())
 // Routes
